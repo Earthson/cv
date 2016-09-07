@@ -62,7 +62,7 @@
 \cvitem{Scala}{主语言，函数式爱好者，熟悉大部分特性，熟练编写应用和类库}
 \cvitem{Python}{主语言，主要于机器学习和数据挖掘，熟练Scikit-Learn/Pandas，擅长爬虫}
 \cvitem{大数据}{熟悉大数据平台，深刻理解Spark的原理，擅长Spark应用及调优}
-\cvitem{机器学习}{熟悉基本原理，实现过过部分算法，拥有丰富项目经验}
+\cvitem{机器学习}{熟悉基本原理，实现过部分算法，拥有丰富项目经验}
 \cvitem{全栈开发}{熟悉C/C++, Java, JavaScript等，熟练使用Linux，全栈开发工程师}
 \cvitem{社区贡献}{Spark, XGBoost}
 
@@ -76,7 +76,7 @@
 \begin{itemize}
 	\item 基于Storm流式框架完成对公司广告投放系统的日志实时监控。架构和开发全栈
 	\newline{}
-	使用inotify监控新日志，redis作为日志队列，用Storm消费队列。利用时间窗自动分段汇总，完成对MySQL数据库的更新。了毫秒级的任意时间区间汇总数据查询
+	使用inotify监控新日志，redis作为日志队列，用Storm消费队列。利用时间窗自动分段汇总，完成对MySQL数据库的更新。毫秒级的任意时间区间汇总数据查询
 	\item 基于Python coroutine的电商爬虫系统。架构和开发全栈
 	\newline{}
 	异步非阻塞爬虫服务，tproxy作代理池，MongoDB作数据仓库
@@ -87,23 +87,23 @@
 \begin{itemize}
 	\item DataInsight大数据挖掘平台。作为架构和主开发
 		\begin{itemize}
-			\item 架构。使用Spark作为数据和计算引擎，使用Akka和Play作为产品框架，实现DAG实时任务调度引擎
-			\item 开发。3w+的Scala开发，算法以及前端全栈开发
+			\item 架构。使用Spark作为数据和计算引擎，使用Akka和Play作为后端框架，实现DAG实时任务调度引擎。前端采用gulp+browserify+ES6+ReactJS+RxJS方案
+			\item 开发。3w+的Scala代码，算法，后端以及前端全栈开发
 			\item 运维。使用Anaconda作为基础平台，提供Python和R的环境。Spark的维护和调优。集成测试环境维护
 			\item 管理。代码review，开发任务分配
 		\end{itemize}
 	\item 银联商务店铺和大众点评商铺匹配
 	\newline{}
-	使用经纬度，地址，店名等信息，提取最大公共前缀，子串和子序列等，利用Logistic Regression分类算法完成商户的匹配。结果F1-score达到了接近90\%。因为数据量较大（数百万商户），利用Spark平台，先使用GeoHash先对候选集进行粗筛， 再用Logistic Regression训练模型，对结果进行排序，取匹配度最好的分店作为候选。
+	使用经纬度，地址，商铺名等信息，提取最大公共前缀，后缀，子串和编辑距离等特征，利用Logistic Regression分类算法完成商户的匹配。结果F1-score达到了接近90\%。因为数据量较大（数百万商户），利用Spark平台，使用GeoHash对候选集进行粗筛，用Logistic Regression训练模型，对结果进行排序，取匹配度最好的分店作为候选
 	\item 华泰证券用户推荐POC。基于用户的历史交易记录，向用户推荐产品类别
 	\newline{}
-	使用用户的历史交易记录按时间窗分段分别汇总用户和产品的特征，使用XGBoost训练模型预测用户在下一个时间段的购买行为并按分值排序，取topK作为推荐结果。在测试集上获得了70\%的F1-Score
+	对用户的历史交易记录按时间窗分段分别汇总用户和产品的特征，使用XGBoost训练模型预测用户在下一个时间段的购买行为并按分值排序，取topK作为推荐结果。在测试集上获得了70\%的F1-Score
 	\item 江苏银行舆情分析POC爬虫系统
 	\newline{}
-	使用Python的asyncio系统设计了一套异步非阻塞的爬虫系统。拥有自动随机ip代理，host流量均衡，增量更新等特性。耗时两周
+	使用Python的asyncio系统设计了一套异步非阻塞的爬虫系统。拥有自动随机ip代理，host流量均衡，增量更新等特性。可以轻易的支撑上千并发，跑满带宽。仅耗时一周
 	\item 银联商务MCC清洗
 	\newline{}
-	使用用户的历史刷卡行为，分析汇总得到mcc和商铺的刷卡行为分布，并汇总商铺的名称等文本特征，使用XGBoost训练分类模型，最后在餐饮类别上获得了90+\%的F1-Score
+	使用用户的历史刷卡行为，分析汇总得到mcc和商铺的刷卡行为分布，加入商铺的名称等文本特征，使用XGBoost训练分类模型，最后在餐饮类别上获得了90+\%的F1-Score
 \end{itemize}
 }
 
