@@ -27,13 +27,13 @@
 % personal data
 \name{陆}{云飞}
 \title{算法工程师}                               % optional, remove / comment the line if not wanted
-\address{Beijin}{}{China}% optional, remove / comment the line if not wanted; the "postcode city" and and "country" arguments can be omitted or provided empty
+\address{北京}{}{}% optional, remove / comment the line if not wanted; the "postcode city" and and "country" arguments can be omitted or provided empty
 \phone[mobile]{+86~17090149380}                   % optional, remove / comment the line if not wanted
 \email{Earthson.Lu@gmail.com}                               % optional, remove / comment the line if not wanted
 \homepage{blog.earthson.net}                         % optional, remove / comment the line if not wanted
 \extrainfo{}                 % optional, remove / comment the line if not wanted
 \photo[64pt][0.4pt]{earthson.png}                       % optional, remove / comment the line if not wanted; '64pt' is the height the picture must be resized to, 0.4pt is the thickness of the frame around it (put it to 0pt for no frame) and 'picture' is the name of the picture file
-\quote{Some quote}                                 % optional, remove / comment the line if not wanted
+\quote{大数据和数据挖掘技术全栈工程师}                                 % optional, remove / comment the line if not wanted
 
 % to show numerical labels in the bibliography (default is to show no labels); only useful if you make citations in your resume
 %\makeatletter
@@ -52,110 +52,70 @@
 %-----       resume       ---------------------------------------------------------
 \makecvtitle
 
-\section{工作经历}
-\cventry{13.06--13.12}{工程师}{秒针系统}{北京}{} {
-基于Storm流式框架完成对公司广告投放系统的日志实时监控
-}
+\section{求职意向}
+
+\cvitem{人工智能}{机器学习，数据挖掘，推荐系统等相关领域的工作}
+\cvitem{量化交易}{希望能够从事基于机器学习方案的程序化交易系统的构建}
+
+
+\section{主要技能}
+\cvitem{Scala}{主语言，函数式爱好者，熟悉大部分特性，熟练编写应用和类库}
+\cvitem{Python}{主语言，主要于机器学习和数据挖掘，熟练Scikit-Learn/Pandas，擅长爬虫}
+\cvitem{大数据}{熟悉大数据平台，深刻理解Spark的原理，擅长Spark应用及调优}
+\cvitem{机器学习}{熟悉基本原理，实现过过部分算法，拥有丰富项目经验}
+\cvitem{全栈开发}{熟悉C/C++, Java, JavaScript等，熟练使用Linux，全栈开发工程师}
+\cvitem{社区贡献}{Spark, XGBoost}
 
 \section{教育经历}
 \cventry{2009--2013}{本科}{吉林大学}{计算机科学与技术}{}{
 	ACM/ICPC Regional 2010 Harbin Gold
 	}  % arguments 3 to 6 can be left empty
 
-\section{Experience}
-\subsection{Vocational}
-\cventry{year--year}{Job title}{Employer}{City}{}{General description no longer than 1--2 lines.\newline{}%
-Detailed achievements:%
-\begin{itemize}%
-\item Achievement 1;
-\item Achievement 2, with sub-achievements:
-  \begin{itemize}%
-  \item Sub-achievement (a);
-  \item Sub-achievement (b), with sub-sub-achievements (don't do this!);
-    \begin{itemize}
-    \item Sub-sub-achievement i;
-    \item Sub-sub-achievement ii;
-    \item Sub-sub-achievement iii;
-    \end{itemize}
-  \item Sub-achievement (c);
-  \end{itemize}
-\item Achievement 3.
-\end{itemize}}
-\cventry{year--year}{Job title}{Employer}{City}{}{Description line 1\newline{}Description line 2}
-\subsection{Miscellaneous}
-\cventry{year--year}{Job title}{Employer}{City}{}{Description}
+\section{工作经历}
+\cventry{13.06--13.12}{工程师}{秒针系统}{北京}{} {
+\begin{itemize}
+	\item 基于Storm流式框架完成对公司广告投放系统的日志实时监控。架构和开发全栈
+	\newline{}
+	使用inotify监控新日志，redis作为日志队列，用Storm消费队列。利用时间窗自动分段汇总，完成对MySQL数据库的更新。了毫秒级的任意时间区间汇总数据查询
+	\item 基于Python coroutine的电商爬虫系统。架构和开发全栈
+	\newline{}
+	异步非阻塞爬虫服务，tproxy作代理池，MongoDB作数据仓库
+\end{itemize}
+}
 
-\section{Languages}
-\cvitemwithcomment{Language 1}{Skill level}{Comment}
-\cvitemwithcomment{Language 2}{Skill level}{Comment}
-\cvitemwithcomment{Language 3}{Skill level}{Comment}
+\cventry{14.01--至今}{算法工程师}{明略数据}{北京}{} {
+\begin{itemize}
+	\item DataInsight大数据挖掘平台。作为架构和主开发
+		\begin{itemize}
+			\item 架构。使用Spark作为数据和计算引擎，使用Akka和Play作为产品框架，实现DAG实时任务调度引擎
+			\item 开发。3w+的Scala开发，算法以及前端全栈开发
+			\item 运维。使用Anaconda作为基础平台，提供Python和R的环境。Spark的维护和调优。集成测试环境维护
+			\item 管理。代码review，开发任务分配
+		\end{itemize}
+	\item 银联商务店铺和大众点评商铺匹配
+	\newline{}
+	使用经纬度，地址，店名等信息，提取最大公共前缀，子串和子序列等，利用Logistic Regression分类算法完成商户的匹配。结果F1-score达到了接近90\%。因为数据量较大（数百万商户），利用Spark平台，先使用GeoHash先对候选集进行粗筛， 再用Logistic Regression训练模型，对结果进行排序，取匹配度最好的分店作为候选。
+	\item 华泰证券用户推荐POC。基于用户的历史交易记录，向用户推荐产品类别
+	\newline{}
+	使用用户的历史交易记录按时间窗分段分别汇总用户和产品的特征，使用XGBoost训练模型预测用户在下一个时间段的购买行为并按分值排序，取topK作为推荐结果。在测试集上获得了70\%的F1-Score
+	\item 江苏银行舆情分析POC爬虫系统
+	\newline{}
+	使用Python的asyncio系统设计了一套异步非阻塞的爬虫系统。拥有自动随机ip代理，host流量均衡，增量更新等特性。耗时两周
+	\item 银联商务MCC清洗
+	\newline{}
+	使用用户的历史刷卡行为，分析汇总得到mcc和商铺的刷卡行为分布，并汇总商铺的名称等文本特征，使用XGBoost训练分类模型，最后在餐饮类别上获得了90+\%的F1-Score
+\end{itemize}
+}
 
-\section{Computer skills}
-\cvdoubleitem{category 1}{XXX, YYY, ZZZ}{category 4}{XXX, YYY, ZZZ}
-\cvdoubleitem{category 2}{XXX, YYY, ZZZ}{category 5}{XXX, YYY, ZZZ}
-\cvdoubleitem{category 3}{XXX, YYY, ZZZ}{category 6}{XXX, YYY, ZZZ}
+	
+\section{个人爱好}
+\cvitem{计算机}{热衷于钻研新技术，函数式编程爱好者}
+\cvitem{羽毛球}{很好的陪练}
 
-\section{Interests}
-\cvitem{hobby 1}{Description}
-\cvitem{hobby 2}{Description}
-\cvitem{hobby 3}{Description}
-
-\section{Extra 1}
-\cvlistitem{Item 1}
-\cvlistitem{Item 2}
-\cvlistitem{Item 3. This item is particularly long and therefore normally spans over several lines. Did you notice the indentation when the line wraps?}
-
-\section{Extra 2}
-\cvlistdoubleitem{Item 1}{Item 4}
-\cvlistdoubleitem{Item 2}{Item 5\cite{book1}}
-\cvlistdoubleitem{Item 3}{Item 6. Like item 3 in the single column list before, this item is particularly long to wrap over several lines.}
-
-\section{References}
-\begin{cvcolumns}
-  \cvcolumn{Category 1}{\begin{itemize}\item Person 1\item Person 2\item Person 3\end{itemize}}
-  \cvcolumn{Category 2}{Amongst others:\begin{itemize}\item Person 1, and\item Person 2\end{itemize}(more upon request)}
-  \cvcolumn[0.5]{All the rest \& some more}{\textit{That} person, and \textbf{those} also (all available upon request).}
-\end{cvcolumns}
-
-% Publications from a BibTeX file without multibib
-%  for numerical labels: \renewcommand{\bibliographyitemlabel}{\@biblabel{\arabic{enumiv}}}% CONSIDER MERGING WITH PREAMBLE PART
-%  to redefine the heading string ("Publications"): \renewcommand{\refname}{Articles}
-\nocite{*}
-\bibliographystyle{plain}
-\bibliography{publications}                        % 'publications' is the name of a BibTeX file
-
-% Publications from a BibTeX file using the multibib package
-%\section{Publications}
-%\nocitebook{book1,book2}
-%\bibliographystylebook{plain}
-%\bibliographybook{publications}                   % 'publications' is the name of a BibTeX file
-%\nocitemisc{misc1,misc2,misc3}
-%\bibliographystylemisc{plain}
-%\bibliographymisc{publications}                   % 'publications' is the name of a BibTeX file
+\section{语言}
+\cvitemwithcomment{Engilsh}{大学英语四级}{}
 
 \clearpage
-%-----       letter       ---------------------------------------------------------
-% recipient data
-\recipient{Company Recruitment team}{Company, Inc.\\123 somestreet\\some city}
-\date{January 01, 1984}
-\opening{Dear Sir or Madam,}
-\closing{Yours faithfully,}
-\enclosure[Attached]{curriculum vit\ae{}}          % use an optional argument to use a string other than "Enclosure", or redefine \enclname
-\makelettertitle
-
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis ullamcorper neque sit amet lectus facilisis sed luctus nisl iaculis. Vivamus at neque arcu, sed tempor quam. Curabitur pharetra tincidunt tincidunt. Morbi volutpat feugiat mauris, quis tempor neque vehicula volutpat. Duis tristique justo vel massa fermentum accumsan. Mauris ante elit, feugiat vestibulum tempor eget, eleifend ac ipsum. Donec scelerisque lobortis ipsum eu vestibulum. Pellentesque vel massa at felis accumsan rhoncus.
-
-Suspendisse commodo, massa eu congue tincidunt, elit mauris pellentesque orci, cursus tempor odio nisl euismod augue. Aliquam adipiscing nibh ut odio sodales et pulvinar tortor laoreet. Mauris a accumsan ligula. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Suspendisse vulputate sem vehicula ipsum varius nec tempus dui dapibus. Phasellus et est urna, ut auctor erat. Sed tincidunt odio id odio aliquam mattis. Donec sapien nulla, feugiat eget adipiscing sit amet, lacinia ut dolor. Phasellus tincidunt, leo a fringilla consectetur, felis diam aliquam urna, vitae aliquet lectus orci nec velit. Vivamus dapibus varius blandit.
-
-Duis sit amet magna ante, at sodales diam. Aenean consectetur porta risus et sagittis. Ut interdum, enim varius pellentesque tincidunt, magna libero sodales tortor, ut fermentum nunc metus a ante. Vivamus odio leo, tincidunt eu luctus ut, sollicitudin sit amet metus. Nunc sed orci lectus. Ut sodales magna sed velit volutpat sit amet pulvinar diam venenatis.
-
-Albert Einstein discovered that $e=mc^2$ in 1905.
-
-\[ e=\lim_{n \to \infty} \left(1+\frac{1}{n}\right)^n \]
-
-\makeletterclosing
-
-%\clearpage\end{CJK*}                              % if you are typesetting your resume in Chinese using CJK; the \clearpage is required for fancyhdr to work correctly with CJK, though it kills the page numbering by making \lastpage undefined
 \end{document}
 
 
